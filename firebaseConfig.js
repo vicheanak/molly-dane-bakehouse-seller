@@ -7,7 +7,7 @@ import {
   initializeAuth,
 } from "firebase/auth/react-native";
 
-// import {...} from "firebase/database";
+import { getDatabase } from "firebase/database";
 import { getFirestore } from "firebase/firestore";
 // import {...} from "firebase/functions";
 // import {...} from "firebase/storage";
@@ -21,7 +21,8 @@ const firebaseConfig = {
   storageBucket: "molly-dene-bakehouse.appspot.com",
   messagingSenderId: "1090544620332",
   appId: "1:1090544620332:web:66a11bba591a965f5fd289",
-  measurementId: "G-Q1N1X8JZ36"
+  measurementId: "G-Q1N1X8JZ36",
+  databaseURL: 'https://molly-dene-bakehouse-default-rtdb.asia-southeast1.firebasedatabase.app'
 };
 
 export const FIREBASE_APP = initializeApp(firebaseConfig);
@@ -29,5 +30,5 @@ export const FIREBASE_AUTH = initializeAuth(FIREBASE_APP, {
   persistence: getReactNativePersistence(AsyncStorage),
 });
 // export const FIREBASE_AUTH = getAuth(FIREBASE_APP);
-export const FIRESTORE_DB = getFirestore(FIREBASE_APP);
+export const FIREBASE_DB = getDatabase(FIREBASE_APP);
 
