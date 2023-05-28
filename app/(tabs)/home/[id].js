@@ -23,7 +23,7 @@ const HomeDetail = () => {
     return (
         <View>
             <Stack.Screen options={{headerTitle: `Home #${id}`}} />
-            <Text>My Detail {detail.desc}, test {detail.test}</Text>
+            <Text>Name {detail.name}, test {detail.email}</Text>
         </View>
     )
 }
