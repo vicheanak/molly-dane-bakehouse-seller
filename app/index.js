@@ -14,7 +14,6 @@ const StartPage = () => {
   useEffect(() => {
     onAuthStateChanged(FIREBASE_AUTH, (user) => {
       if (user !== null){
-        console.log('in')
         router.replace("/(tabs)/home");
       } else {
         router.replace("/screens/Login");
@@ -24,23 +23,6 @@ const StartPage = () => {
   }, [])
 
   return <SplashScreen />
-  // return <Redirect href="/screens/Login" />
-    // return <Redirect href="/home" />
-
-  // if (user){
-  //   return <Redirect href="/home" />
-  // } else {
-  //   return <Redirect href="/screens/Login" />
-  // }
-
-  // return {user && <Redirect href="/home" />}
-  // return <View><Text>LOADING...</Text></View>;
-
-  // <NavigationContainer>
-  //   <Stack.Navigator initialRouteName="/home">
-  //     <Stack.Screen name="home" component={HomePage} />
-  //   </Stack.Navigator>
-  // </NavigationContainer>
 }
 
 export default StartPage;
